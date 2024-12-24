@@ -91,8 +91,8 @@ public class HangarAPI {
 
 
 	// project
-	public CompletableFuture<Hangar_Project> getProject(final String slug) {
-		return this.sendRequest("/projects/"+slug)
+	public CompletableFuture<Hangar_Project> getProject(final String namespace) {
+		return this.sendRequest("/projects/"+namespace)
 			.thenApply(response ->
 				GSON().fromJson(response.body(), Hangar_Project.class)
 			);
@@ -162,8 +162,8 @@ public class HangarAPI {
 
 
 	// project versions
-	public CompletableFuture<Hangar_Versions> getVersions(final String slug) {
-		return this.sendRequest(String.format("/projects/%s/versions", slug))
+	public CompletableFuture<Hangar_Versions> getVersions(final String namespace) {
+		return this.sendRequest(String.format("/projects/%s/versions", namespace))
 			.thenApply(response ->
 				GSON().fromJson(response.body(), Hangar_Versions.class)
 			);
@@ -176,8 +176,8 @@ public class HangarAPI {
 
 
 	// version info
-	public CompletableFuture<Hangar_Version> getVersion(final String slug, final String version) {
-		return this.sendRequest(String.format("/projects/%s/versions/%s", slug, version))
+	public CompletableFuture<Hangar_Version> getVersion(final String namespace, final String version) {
+		return this.sendRequest(String.format("/projects/%s/versions/%s", namespace, version))
 			.thenApply(response ->
 				GSON().fromJson(response.body(), Hangar_Version.class)
 			);
