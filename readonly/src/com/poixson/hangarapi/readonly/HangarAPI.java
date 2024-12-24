@@ -170,7 +170,7 @@ public class HangarAPI {
 	}
 	public CompletableFuture<Hangar_Versions> getVersions(final Hangar_Project project) {
 		final Hangar_Namespace namespace = project.namespace();
-		return this.getVersions(namespace.slug());
+		return this.getVersions(namespace.toString());
 	}
 
 
@@ -184,7 +184,7 @@ public class HangarAPI {
 	}
 	public CompletableFuture<Hangar_Version> getVersion(final Hangar_Project project, final String version) {
 		final Hangar_Namespace namespace = project.namespace();
-		return this.getVersion(namespace.slug(), version);
+		return this.getVersion(namespace.toString(), version);
 	}
 
 
