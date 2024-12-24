@@ -10,10 +10,11 @@ import java.util.concurrent.CompletableFuture;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.google.gson.JsonObject;
+import com.poixson.hangarapi.readonly.HangarAPI;
 import com.poixson.utils.HttpMethod;
 
 
-public class HangarAPI extends com.poixson.hangarapi.readonly.HangarAPI {
+public class HangarAuthedAPI extends HangarAPI {
 
 	protected final String api_key;
 
@@ -21,7 +22,7 @@ public class HangarAPI extends com.poixson.hangarapi.readonly.HangarAPI {
 
 
 
-	public HangarAPI(final String api_key) {
+	public HangarAuthedAPI(final String api_key) {
 		super();
 		this.api_key = api_key;
 	}
